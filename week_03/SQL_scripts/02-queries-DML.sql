@@ -14,7 +14,8 @@
 -- SELECT - FROM: https://www.mysqltutorial.org/mysql-select-statement-query-data.aspx
 
 
-#USE employees;
+
+USE employees;
 
 ###########
 -- SELECT - FROM: https://www.mysqltutorial.org/mysql-select-statement-query-data.aspx
@@ -22,10 +23,20 @@
 
 # seleccionar columnas específicas de la tabla
 
+SELECT first_name, last_name, birth_date
+FROM employees;
+
+
+
+SELECT 
+	first_name, last_name, birth_date
+FROM 
+	employees;
 
 # seleccionar todas las columnas de la tabla   
 
-
+SELECT *
+FROM employees;
 
 ###########
 -- WHERE: https://www.mysqltutorial.org/mysql-where/
@@ -37,8 +48,16 @@ deben satisfacer
 
 -- Todos los empleados nombrados Hugo
 
+SELECT *
+FROM employees
+WHERE first_name = "Hugo"; 
+
     
 -- Todas las empleadas
+
+SELECT *
+FROM employees
+WHERE gender = "F";
 
 ###########    
 /*
@@ -50,27 +69,45 @@ las palabras clave y los simbolos. Echemos un vistazo a los más
 -- AND: https://www.mysqltutorial.org/mysql-and/
 
 -- Todas las empleadas llamadas Hugo
+SELECT *
+FROM employees
+WHERE first_name = "Hugo" AND gender = "F" ;
 
 ###########
 -- OR: https://www.mysqltutorial.org/mysql-or/
 
 -- Todas las empleadas que son mujeres o se llaman Hugo
 
+SELECT *
+FROM employees
+WHERE first_name = "Hugo" OR gender = "F";
+
     
 ###########
 -- Precedencia del operador
 
+
 # ¿Qué va a devolver esta query?
 
-
+SELECT *
+FROM employees
+WHERE first_name = "Hugo" AND gender = "F" OR gender = "M";
 
 # ¿Y esta?
 
+SELECT *
+FROM employees
+WHERE first_name = "Hugo" AND gender = "F" OR gender = "M";
 
 /*
 Regla SQL: El operador AND tiene prioridad sobre el operador OR
 			  Si queremos anular este comportamiento, debemos utilizar paréntesis.
 */
+
+-- La siguiente query devuelve todos los Hugo que sean F o M
+SELECT *
+FROM employees
+WHERE first_name = "Hugo" AND (gender = "F" OR gender = "M");
 
 
 
@@ -79,12 +116,27 @@ Regla SQL: El operador AND tiene prioridad sobre el operador OR
 
 # Recuperar todos los datos de las personas llamadas Hugo, Mark, Bojan o Anneke
 
-# Otra opciók ("Tipo Python")
+SELECT *
+FROM employees
+WHERE
+	first_name = "Hugo"
+    OR first_name = "Bojan"
+    OR first_name = "Anneke";
+    
 
+
+# Otra opción ("Tipo Python")
+
+SELECT *
+FROM employees
+WHERE first_name IN ("Hugo", "Bojan", "Anneke");
 
 
 # O, para hacer lo contrario
 
+SELECT *
+FROM employees
+WHERE first_name NOT IN ("Hugo", "Bojan", "Anneke");
 
 ###########
 -- LIKE / NOT LIKE: https://www.mysqltutorial.org/mysql-like/
