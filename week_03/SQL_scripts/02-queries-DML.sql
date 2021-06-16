@@ -501,7 +501,6 @@ HAVING names_count < 250
 ORDER BY first_name;
 
 
-
 ###########
 -- LIMIT: https://www.mysqltutorial.org/mysql-limit.aspxauthors
 # Mostrar los números de los 10 empleados mejor pagados
