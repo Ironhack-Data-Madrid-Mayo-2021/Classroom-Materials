@@ -254,15 +254,27 @@ WHERE first_name IS NOT NULL;
 
 -- Ejercicio: Devuelve todas las columnas de las empleadas contratadas después de '2000-01-01'
 
+SELECT * 
+FROM employees
+WHERE gender = "F" AND hire_date > "2000-01-01";
 
 
 ###########
 -- SELECT DISTINCT: https://www.mysqltutorial.org/mysql-distinct.aspx
 
-    
+SELECT gender
+FROM employees;
+
+SELECT first_name
+FROM employees;
+
 # Como el unique de pandas, me da los únicos
 
+SELECT DISTINCT gender
+FROM employees; 
 
+SELECT DISTINCT first_name
+FROM employees;
 
 ###########
 -- Introducción a las funciones agregadas: https://www.mysqltutorial.org/mysql-aggregate-functions.aspx
@@ -277,12 +289,33 @@ Todas las funciones de agregación IGNORAN los valores NULL a menos que se espec
 # pista: emp_no es la clave primaria de la tabla
 
 
+SELECT COUNT(emp_no)
+FROM employees;
+
 
 # ¿Cuántos nombres diferentes tenemos en la tabla?
 
+SELECT COUNT(DISTINCT first_name)
+FROM employees;
 
 -- ¿Cuántos empleados han nacido después de 1965-01-01??
- # NOTA: el uso de * hace que COUNT incluya valores NULL
+SELECT COUNT(*) # NOTA: el uso de * hace que COUNT incluya valores NULL
+FROM employees
+WHERE birth_date >= "1965-01-01";
+
+
+# Contar el número de departamentos únicos
+
+SELECT COUNT(DISTINCT dept_name)
+FROM departments;
+
+SELECT COUNT(first_name)
+FROM employees;
+
+
+SELECT COUNT(first_name)
+FROM employees
+WHERE first_name = "Hugo";
 
     
 ###########
@@ -290,21 +323,31 @@ Todas las funciones de agregación IGNORAN los valores NULL a menos que se espec
 
 # Ordenar los nombres por orden alfabético
 # ASC por defecto
-
+SELECT *
+FROM employees
+ORDER BY first_name ASC;
 
 # Usando múltiples campos
 
-
+SELECT *
+FROM employees
+ORDER BY first_name, last_name ASC;
 
 # MAX()
 
+SELECT MAX(salary)
+FROM salaries;
 
+# MIN()
+SELECT MIN(salary)
+FROM salaries;
 
 
 # AVG()
+SELECT AVG(salary)
+FROM salaries;
 
 
-# Contar el número de departamentos únicos
 
 
 ###########
@@ -323,11 +366,18 @@ ORDER BY c1, c2, ...;
 */
 
 # Contamos el número de veces que aparece cada nombre en la tabla de empleados
-
+SELECT 	
+	first_name, COUNT(first_name)
+FROM employees
+GROUP BY first_name;
 
 # EJERCICIO:  Repite la query pero ordenando el resultado por orden alfabético
 
-
+SELECT 	
+	first_name, COUNT(first_name)
+FROM employees
+GROUP BY first_name
+ORDER BY first_name DESC;
 
 ###########
 -- USANDO alias (AS): https://www.mysqltutorial.org/mysql-alias/
@@ -335,11 +385,16 @@ ORDER BY c1, c2, ...;
 
 # Cambiemos el nombre de la columna COUNT(first_name) del ejemplo anterior
 
-
+SELECT 	
+	first_name AS name, COUNT(first_name) AS names_count
+FROM employees
+GROUP BY first_name
+ORDER BY first_name DESC;
 
 ###### CONCAT
 
-
+SELECT emp_no, CONCAT (first_name, " ", last_name) as full_name
+FROM employees;
 
 ###########
 -- HAVING: https://www.mysqltutorial.org/mysql-having.aspx
@@ -367,8 +422,13 @@ mientras que WHERE no puede utilizar funciones agregadas dentro de sus condicion
 
 # WHERE y HAVING equivalentes:
 
+SELECT *
+FROM employees
+WHERE hire_date >= "2000-01-01";
 
-
+SELECT *
+FROM employees
+HAVING hire_date >= "2000-01-01";
 
 # Ejemplo donde WHERE no funciona, HAVING sí:
 
@@ -376,6 +436,23 @@ mientras que WHERE no puede utilizar funciones agregadas dentro de sus condicion
 
 	# WHERE no funciona:
 
+SELECT
+	first_name, COUNT(first_name) AS names_count
+FROM 
+	employees
+GROUP BY 
+	first_name
+HAVING 
+	names_count < 250
+ORDER BY
+	first_name;
+
+
+SELECT first_name, COUNT(first_name) AS names_count
+FROM  employees
+GROUP BY first_name
+HAVING names_count < 250
+ORDER BY first_name;
 
 
 -- WHERE vs HAVING 
@@ -387,10 +464,41 @@ No es hasta este momento que la salida puede ser mejorada o filtrada con una con
 en la cláusula HAVING.
 */
 
+SELECT first_name, COUNT(first_name) AS names_count
+FROM  employees
+WHERE hire_date LIKE ("1986%")
+GROUP BY first_name
+HAVING names_count < 250
+ORDER BY first_name;
+-- AQUÍ UTILIZO LA COLUMNA QUE YA LLEVA EL COUNT < 250
+
+SELECT first_name, COUNT(first_name) AS names_count
+FROM  employees
+WHERE hire_date LIKE ("1986%")
+GROUP BY first_name
+HAVING COUNT(first_name) < 250
+ORDER BY first_name;
+-- AQUÍ METO EL COUNT DE LA COLUMNA
+
+SELECT first_name, COUNT(first_name) AS names_count
+FROM  employees
+WHERE hire_date LIKE ("1986%")
+GROUP BY first_name
+HAVING COUNT(first_name) < 250
+ORDER BY first_name;
+
+
 /*
 Del subconjunto de empleados contratados antes de 2015, (se aplica a todas las filas --> WHERE)
 Extraer una lista de todos los nombres que se encuentran menos de 250 veces. (función agregada COUNT --> HAVING)
 */
+
+SELECT first_name, COUNT(first_name) AS names_count
+FROM employees
+WHERE hire_date < "2015-01-01"
+GROUP BY first_name
+HAVING names_count < 250
+ORDER BY first_name;
 
 
 
@@ -398,7 +506,10 @@ Extraer una lista de todos los nombres que se encuentran menos de 250 veces. (fu
 -- LIMIT: https://www.mysqltutorial.org/mysql-limit.aspxauthors
 # Mostrar los números de los 10 empleados mejor pagados
 
-
+SELECT emp_no, salary
+FROM salaries
+ORDER BY salary DESC
+LIMIT 10; 
 
 
 ########### EXTRA ###################
