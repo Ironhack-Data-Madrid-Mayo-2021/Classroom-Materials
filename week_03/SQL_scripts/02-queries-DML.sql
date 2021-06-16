@@ -136,7 +136,7 @@ WHERE first_name IN ("Hugo", "Bojan", "Anneke");
 
 SELECT *
 FROM employees
-WHERE first_name NOT IN ("Hugo", "Bojan", "Anneke");
+WHERE first_name NOT IN ("HuGo", "Bojan", "Anneke");
 
 ###########
 -- LIKE / NOT LIKE: https://www.mysqltutorial.org/mysql-like/
@@ -151,31 +151,48 @@ Sintaxis: expresión LIKE patrón
 
 # Seleccionar todos los empleados cuyo nombre empieza por 'An'
 
-
+SELECT *
+FROM employees
+WHERE first_name LIKE ("An%");
 
 # ¿Qué hará esto?
 
-
+SELECT *
+FROM employees
+WHERE first_name LIKE ("AN%");
 
 # ¿Y esto?    
+SELECT *
+FROM employees
+WHERE first_name LIKE ("%An");
 
+SELECT *
+FROM employees
+WHERE first_name LIKE ("%An%");
 
 
 -- El comodín del guión bajo ( _ ) coincide con cualquier carácter, pero sólo con uno
 # Seleccionamos los nombre que empiezan por mar y un caracter más
 
-
-
+SELECT *
+FROM employees
+WHERE first_name LIKE ("mar_");
 
 
 # (NOT LIKE funciona justo devolviéndome lo contrario,  todo lo que no sea mar y un caracter)
+# TODO LO QUE NO SEA LO QUE DEVUELVE LA QUERY ANTERIOR
 
-
+SELECT *
+FROM employees
+WHERE first_name NOT LIKE ("mar_");
 
 # Recuperar todos los datos de los empleados no contratados en el año 1990
 
+SELECT *
+FROM employees
+WHERE hire_date NOT LIKE ("1990%");
 
-    
+
 /*
 NOTA: *, %, _ son llamadaos "Wildcard Characters" o "Comodines"
 */
@@ -185,26 +202,44 @@ NOTA: *, %, _ son llamadaos "Wildcard Characters" o "Comodines"
 -- BETWEEN - AND: https://www.mysqltutorial.org/mysql-between
 
 # Con fechas
-
-
+SELECT *
+FROM employees
+WHERE hire_date>= "1990-01-01" AND hire_date <= "2000-01-01";
 
 
 # Es equivalente a 
-	
+
+SELECT *
+FROM employees
+WHERE hire_date BETWEEN "1990-01-01" AND  "2000-01-01";
 
 
 # con tipos numéricoos 
 
+SELECT *
+FROM salaries
+WHERE salary BETWEEN 60000 AND 70000;
 
 # con strings
 
+SELECT *
+FROM employees
+WHERE first_name BETWEEN "A%" AND "D%";
 
-
+-- Orden alfabético, los nombres empiezan entre a y d 
     
 ###########
 -- IS NOT NULL / IS NULL: https://www.mysqltutorial.org/mysql-is-null/
 -- Como en pandas, jeje ʕ•ᴥ•ʔ
 
+SELECT *
+FROM employees
+WHERE first_name IS NULL;
+
+
+SELECT *
+FROM employees
+WHERE first_name IS NOT NULL;
 
 
 ###########
