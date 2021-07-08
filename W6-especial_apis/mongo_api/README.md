@@ -21,3 +21,8 @@ Extraemos todas las frases que tenemos de un usuario en la base de datos
 url_frases = "http://localhost:5000/frases/"
 person = "Albus Dumbledore"
 ```
+
+
+## ¿Qué personajes hay?
+Para saber los usuarios que hay en la base de datos tienes que hacer una query del tipo get al endpoint /personajes
+
