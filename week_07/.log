@@ -915,3 +915,33 @@
 2021-07-16 09:58:20,397 [1343] DEBUG    root:197: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
 2021-07-16 09:58:20,398 [1343] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
 2021-07-16 09:58:20,398 [1343] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2021-07-16 10:33:53,551 [1740] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2021-07-16 10:33:53,551 [1740] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2021-07-16 10:33:53,551 [1740] INFO     root:247: [JupyterRequire] Initializing comms.
+2021-07-16 10:33:53,553 [1740] DEBUG    root:197: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2021-07-16 10:33:53,553 [1740] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2021-07-16 10:33:53,553 [1740] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2021-07-16 10:33:58,323 [1740] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2021-07-16 10:33:58,323 [1740] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2021-07-16 10:33:58,323 [1740] INFO     root:247: [JupyterRequire] Initializing comms.
+2021-07-16 10:33:58,327 [1740] DEBUG    root:197: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2021-07-16 10:33:58,328 [1740] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2021-07-16 10:33:58,328 [1740] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2021-07-16 10:34:03,910 [1750] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2021-07-16 10:34:03,911 [1750] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2021-07-16 10:34:03,911 [1750] INFO     root:247: [JupyterRequire] Initializing comms.
+2021-07-16 10:34:03,922 [1750] DEBUG    root:197: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2021-07-16 10:34:03,923 [1750] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2021-07-16 10:34:03,924 [1750] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2021-07-16 10:34:04,452 [1750] DEBUG    root:75: [JupyterRequire] Loading Jupyter Require extension.
+2021-07-16 10:34:04,469 [1750] DEBUG    root:93: [JupyterRequire] Initializing comms.
+2021-07-16 10:34:04,469 [1750] INFO     root:247: [JupyterRequire] Initializing comms.
+2021-07-16 10:34:04,473 [1750] DEBUG    root:197: [JupyterRequire] Configuration requested: {'paths': {}, 'shim': None}
+2021-07-16 10:34:04,473 [1750] INFO     root:271: [JupyterRequire] Comms have been successfully initialized.
+2021-07-16 10:34:04,474 [1750] DEBUG    root:97: [JupyterRequire] Registering comm targets.
+2021-07-16 10:34:38,691 [1343] DEBUG    matplotlib.colorbar:600: [JupyterRequire] locator: <matplotlib.colorbar._ColorbarAutoLocator object at 0x1417c5f10>
+2021-07-16 10:34:38,691 [1343] DEBUG    matplotlib.colorbar:645: [JupyterRequire] Using auto colorbar locator <matplotlib.colorbar._ColorbarAutoLocator object at 0x1417c5f10> on colorbar
+2021-07-16 10:34:38,691 [1343] DEBUG    matplotlib.colorbar:802: [JupyterRequire] Setting pcolormesh
+2021-07-16 10:34:41,871 [1343] DEBUG    matplotlib.colorbar:600: [JupyterRequire] locator: <matplotlib.colorbar._ColorbarAutoLocator object at 0x1418c69d0>
+2021-07-16 10:34:41,871 [1343] DEBUG    matplotlib.colorbar:645: [JupyterRequire] Using auto colorbar locator <matplotlib.colorbar._ColorbarAutoLocator object at 0x1418c69d0> on colorbar
+2021-07-16 10:34:41,871 [1343] DEBUG    matplotlib.colorbar:802: [JupyterRequire] Setting pcolormesh
