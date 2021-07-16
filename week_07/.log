@@ -945,3 +945,41 @@
 2021-07-16 10:34:41,871 [1343] DEBUG    matplotlib.colorbar:600: [JupyterRequire] locator: <matplotlib.colorbar._ColorbarAutoLocator object at 0x1418c69d0>
 2021-07-16 10:34:41,871 [1343] DEBUG    matplotlib.colorbar:645: [JupyterRequire] Using auto colorbar locator <matplotlib.colorbar._ColorbarAutoLocator object at 0x1418c69d0> on colorbar
 2021-07-16 10:34:41,871 [1343] DEBUG    matplotlib.colorbar:802: [JupyterRequire] Setting pcolormesh
+2021-07-16 11:35:38,366 [1343] ERROR    root:152: [JupyterRequire] Internal Python error in the inspect module.
+Below is the traceback from this internal error.
+
+2021-07-16 11:35:38,512 [1343] INFO     root:1117: [JupyterRequire] 
+Unfortunately, your original traceback can not be constructed.
+
+2021-07-16 11:47:22,645 [1343] ERROR    root:152: [JupyterRequire] Internal Python error in the inspect module.
+Below is the traceback from this internal error.
+
+2021-07-16 11:55:52,469 [1343] ERROR    root:152: [JupyterRequire] Internal Python error in the inspect module.
+Below is the traceback from this internal error.
+
+2021-07-16 11:55:52,579 [1343] INFO     root:1117: [JupyterRequire] 
+Unfortunately, your original traceback can not be constructed.
+
+2021-07-16 12:01:45,241 [1343] WARNING  py.warnings:110: [JupyterRequire] /Users/iudh/opt/anaconda3/envs/clase/lib/python3.7/site-packages/sklearn/model_selection/_search.py:849: FutureWarning: The parameter 'iid' is deprecated in 0.22 and will be removed in 0.24.
+  "removed in 0.24.", FutureWarning
+
+2021-07-16 12:03:44,622 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.001213 seconds
+2021-07-16 12:03:44,622 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 0 trials
+2021-07-16 12:04:21,493 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.001212 seconds
+2021-07-16 12:04:21,493 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 1/1 trials with best loss 390.955442
+2021-07-16 12:04:47,794 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.000947 seconds
+2021-07-16 12:04:47,794 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 2/2 trials with best loss 390.955442
+2021-07-16 12:04:53,487 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.001372 seconds
+2021-07-16 12:04:53,488 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 3/3 trials with best loss 359.772522
+2021-07-16 12:05:26,486 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.000953 seconds
+2021-07-16 12:05:26,486 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 4/4 trials with best loss 359.772522
+2021-07-16 12:05:35,776 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.001010 seconds
+2021-07-16 12:05:35,776 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 5/5 trials with best loss 359.772522
+2021-07-16 12:05:57,875 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.001028 seconds
+2021-07-16 12:05:57,876 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 6/6 trials with best loss 359.772522
+2021-07-16 12:06:40,028 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.001035 seconds
+2021-07-16 12:06:40,028 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 7/7 trials with best loss 359.772522
+2021-07-16 12:07:19,862 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.001077 seconds
+2021-07-16 12:07:19,863 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 8/8 trials with best loss 359.772522
+2021-07-16 12:07:55,319 [1343] INFO     hyperopt.tpe:873: [JupyterRequire] build_posterior_wrapper took 0.000963 seconds
+2021-07-16 12:07:55,320 [1343] INFO     hyperopt.tpe:909: [JupyterRequire] TPE using 9/9 trials with best loss 347.498975
